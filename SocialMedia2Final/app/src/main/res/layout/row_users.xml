@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:contentPadding="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!--Cover  Photo-->
+        <ImageView
+            android:id="@+id/coverIv"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@drawable/backgra"
+            android:scaleType="fitXY">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="100dp"
+            >
+
+
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/avatarIv"
+                android:src="@drawable/user1_icon"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/nameTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="اسم الشخص"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorBlack"/>
+                <TextView
+                    android:id="@+id/emailTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ايميل الشخص"
+                    android:textColor="@color/colorBlack"/>
+            </LinearLayout>
+
+            <!--Add icons to indicate blocked/unblocked-->
+            <ImageView
+                android:id="@+id/blockIv"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_unblocked_green"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Internet Permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo2"
+        android:label="Haratna, Neighborhood Social Media App"
+        android:roundIcon="@drawable/logo2"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".BusMapLocationPickerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MapPinnedPostsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapLocationPickerActivity"
+            android:exported="false" />
+        <activity android:name=".GroupEditActivity" />
+        <activity android:name=".GroupInfoActivity" />
+        <activity android:name=".GroupParticipantAddActivity" />
+        <activity android:name=".GroupCreateActivity" />
+        <activity android:name=".PostLikedByActivity" />
+        <activity android:name=".BusPostLikedByActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".PostDetailActivity" />
+        <activity android:name=".BusPostDetailActivity" />
+        <activity android:name=".SaleitemDetailActivity" />
+        <activity android:name=".ThereProfileActivity" />
+        <activity android:name=".ThereProfileBOActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".IndividualDashboardActivity" />
+        <activity android:name=".BusinessOwnerDashboardActivity" />
+        <activity
+            android:name=".GroupChatActivity"
+            android:theme="@style/AppThemeNo" />
+        <!--
+Intent filters inform the system what intents an application component is willing to accept.
+            To receive text/image type of intents we will add intent filter to activity, that will handle that data
+        -->
+        <activity
+            android:name=".AddPostActivity"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- For Image -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- For Text -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddBusPostActivity"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- For Image -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- For Text -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddSaleitemActivity"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- For Image -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- For Text -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddMenuActivity"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- For Image -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- For Text -->
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChatActivity"
+            android:exported="true"
+            android:theme="@style/AppThemeNo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".notifications.FirebaseMessaging"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- define file provider -->
+        <!-- Set the android:exported attribute to false; the FileProvider does not need to be public. -->
+        <!-- Set the android:grantUriPermissions attribute to true, to allow you to grant temporary access to files. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.socialmedia.socialmedia.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+    </application>
+
+</manifest>

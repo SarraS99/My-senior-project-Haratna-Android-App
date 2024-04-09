@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.MenuFragment">
+
+    <Button
+        android:id="@+id/addMBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="30sp"
+        android:paddingEnd="30sp"
+        android:backgroundTint="@color/gray2"
+        android:text="اضافة خدمة"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"/>
+
+    <!--RecyclerView: User specific posts-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menuRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

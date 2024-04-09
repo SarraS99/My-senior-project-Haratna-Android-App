@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo2"
+        android:layout_marginRight="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <!--TextView: Label Register-->
+    <TextView
+        android:id="@+id/RegTXT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="إنشاء حساب"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:layout_marginTop="30dp"
+        android:textSize="40sp" />
+
+    <!--EditText: Input User Name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/NameTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/RegTXT">
+
+        <EditText
+            android:id="@+id/NameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="الإسم"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <!--EditText: Input Email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/NameTIL">
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="الإيميل"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--EditText: Input Mobile Number-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/MobileTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/emailTIL">
+
+        <EditText
+            android:id="@+id/MobileEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="رقم الجوال"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--EditText: Input Password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/MobileTIL"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/passwordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="كلمة المرور"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--EditText: Input ConPassword-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ConPasswordTIL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordTIL"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/ConPasswordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="تأكيد كلمة المرور"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Spinner: User Type-->
+    <Spinner
+        android:id="@+id/typeUserBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ConPasswordTIL"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/btn_dropdown">
+
+    </Spinner>
+
+
+    <!--Spinner: User Location-->
+
+    <Spinner
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeUserBox"
+        android:background="@android:drawable/btn_dropdown" />
+
+    <!--Button: Register User-->
+    <Button
+        android:id="@+id/registerBtn"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location"
+        android:layout_centerHorizontal="true"
+        android:drawablePadding="5dp"
+        android:text="إنشاء حساب"
+        android:textSize="20sp"
+        android:background="@color/yellow"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="60sp"
+        android:paddingEnd="60sp"
+        android:layout_marginTop="20dp"/>
+
+    <!--TextView: Click go to LoginActivity-->
+    <TextView
+        android:id="@+id/have_accountTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="هل لديك حساب؟ سجل الدخول"
+        android:textAlignment="center"
+        android:layout_below="@id/registerBtn"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/blue"/>
+
+</RelativeLayout>
